@@ -33,7 +33,6 @@ p {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 2px dashed chartreuse;
 }
 .list {
   padding: 0;
@@ -44,10 +43,6 @@ p {
   text-decoration: none;
 }
 /*Header*/
-.page-header {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
 /*logo*/
 .logotype {
   color: var(--accent-color);
@@ -56,6 +51,12 @@ p {
   font-size: 26px;
   line-height: 1.19;
 }
+.page-header .logotype {
+  display: block;
+  margin-right: 93px;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
 .page-header .logo-part {
   color: var(--text-black-color);
 }
@@ -63,7 +64,18 @@ p {
   color: var(--text-white-color);
 }
 /*Navigation*/
+.nav-list,
+.contacts-list {
+  display: flex;
+}
+.nav-item:not(:last-child),
+.contacts-item:not(:last-child) {
+  margin-right: 50px;
+}
 .nav-list .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: var(--title-text-color);
   font-weight: 500;
   line-height: 1.14;
@@ -75,6 +87,9 @@ p {
   color: var(--accent-color);
 }
 .contacts-list .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: var(--primary-text-color);
   font-style: normal;
   font-weight: 500;
@@ -84,6 +99,16 @@ p {
 .contacts-list .link:hover,
 .contacts-list .link:focus {
   color: var(--accent-color);
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ececec;
 }
 /*main*/
 .section {
@@ -101,6 +126,9 @@ p {
 }
 .hero-title {
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 696px;
   color: var(--text-white-color);
   font-weight: 900;
   font-size: 44px;
@@ -128,6 +156,16 @@ p {
   clip-path: inset(50%);
   margin: -1px;
 }
+.features-list,
+.pictures-list {
+  display: flex;
+}
+.feature-item {
+  flex-basis: calc((100%-120px) / 4);
+}
+.feature-item:not(:last-child) {
+  margin-right: 30px;
+}
 .features-list .title {
   margin-bottom: 10px;
   color: var(--title-text-color);
@@ -136,12 +174,32 @@ p {
   line-height: 1.14;
   text-transform: uppercase;
 }
+.pictures-list .item {
+  flex-basis: calc((100%-60px) / 3);
+}
+.pictures-list .item:not(:last-child) {
+  margin-right: 30px;
+}
 .section.team {
   background-color: var(--button-background-color);
 }
-.team-item,
-.works-item {
+
+.team-list {
+  display: flex;
+}
+.team-item {
+  flex-basis: calc((100% - 90px) / 4);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
   background-color: var(--white-background-color);
+}
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+.team-item .card-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .team-list .title {
   margin-bottom: 10px;
@@ -159,12 +217,8 @@ p {
 /*Images*/
 .image {
   display: block;
-}
-.team .image {
-  margin-bottom: 30px;
-}
-.works .image {
-  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
 }
 /*button*/
 .button {
@@ -178,7 +232,6 @@ p {
   font-weight: 500;
   font-size: var(--font-size-sixteen);
   line-height: 1.62;
-
   letter-spacing: 0.03em;
   cursor: pointer;
 }
@@ -217,11 +270,8 @@ p {
 .footer-logo {
   margin-bottom: 20px;
 }
-.contact-list .contact-item {
+.contact-list .contact-item:not(:last-child) {
   margin-bottom: 9px;
-}
-.contact-list .contact-item:last-child {
-  margin-bottom: 0;
 }
 .contact-list .contact-item {
   color: var(--contact-item-color);
@@ -241,15 +291,38 @@ p {
   color: var(--title-text-color);
   font-weight: var(--bold-font);
   font-size: 18px;
-  line-height: 0.2;
+  line-height: 2;
   letter-spacing: 0.06em;
 }
 .works-list .text {
-  margin-bottom: 20px;
   color: var(--primary-text-color);
   font-size: var(--font-size-sixteen);
   line-height: 1.88;
 }
 .button-list {
+  display: flex;
+  justify-content: center;
   margin-bottom: 50px;
+}
+.button-list .item:not(:last-child) {
+  margin-right: 8px;
+}
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+.works-item {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-top: 30px;
+  margin-left: 30px;
+  border: 1px solid #eeeeee;
+  background-color: var(--white-background-color);
+}
+.works-item .card-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
