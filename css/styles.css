@@ -107,8 +107,10 @@ p {
 }
 .header-wrap {
   display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid #ececec;
+}
+.contacts-list {
+  margin-left: auto;
 }
 /*main*/
 .section {
@@ -183,7 +185,6 @@ p {
 .section.team {
   background-color: var(--button-background-color);
 }
-
 .team-list {
   display: flex;
 }
