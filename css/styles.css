@@ -9,6 +9,7 @@
   --button-background-color: #f5f4fa;
   --hero-button-active: #188ce8;
   --white-background-color: #ffffff;
+  --portfolio-border-color: #eeeeee;
   --bold-font: 700;
   --font-size-sixteen: 16px;
 }
@@ -159,13 +160,16 @@ p {
   margin: -1px;
 }
 .features-list,
-.pictures-list {
+.pictures-list,
+.team-list {
   display: flex;
 }
 .feature-item {
-  flex-basis: calc((100%-120px) / 4);
+  flex-basis: calc((100% - 90px) / 4);
 }
-.feature-item:not(:last-child) {
+.feature-item:not(:last-child),
+.pictures-list .item:not(:last-child),
+.team-item:not(:last-child) {
   margin-right: 30px;
 }
 .features-list .title {
@@ -177,16 +181,10 @@ p {
   text-transform: uppercase;
 }
 .pictures-list .item {
-  flex-basis: calc((100%-60px) / 3);
-}
-.pictures-list .item:not(:last-child) {
-  margin-right: 30px;
+  flex-basis: calc((100% - 60px) / 3);
 }
 .section.team {
   background-color: var(--button-background-color);
-}
-.team-list {
-  display: flex;
 }
 .team-item {
   flex-basis: calc((100% - 90px) / 4);
@@ -194,9 +192,6 @@ p {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   background-color: var(--white-background-color);
-}
-.team-item:not(:last-child) {
-  margin-right: 30px;
 }
 .team-item .card-content {
   padding-top: 30px;
@@ -224,7 +219,7 @@ p {
 /*button*/
 .button {
   display: inline-block;
-  border: 1px solid transparent;
+  border: none;
   padding: 6px 22px;
   border-radius: 4px;
   color: var(--text-white-color);
@@ -318,7 +313,6 @@ p {
   flex-basis: calc(100% / 3 - 30px);
   margin-top: 30px;
   margin-left: 30px;
-  border: 1px solid #eeeeee;
   background-color: var(--white-background-color);
 }
 .works-item .card-content {
@@ -326,4 +320,7 @@ p {
   padding-bottom: 20px;
   padding-left: 24px;
   padding-right: 24px;
+  border-left: 1px solid var(--portfolio-border-color);
+  border-right: 1px solid var(--portfolio-border-color);
+  border-bottom: 1px solid var(--portfolio-border-color);
 }
